@@ -51,7 +51,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Gracz.cs" />
+    <Compile Include="IUstawieniaPlanszy.cs" />
     <Compile Include="Komputer.cs" />
+    <Compile Include="Plansza.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
