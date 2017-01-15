@@ -50,7 +50,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gra.cs" />
     <Compile Include="Gracz.cs" />
+    <Compile Include="IUstawieniaGry.cs" />
     <Compile Include="IUstawieniaPlanszy.cs" />
     <Compile Include="Komputer.cs" />
     <Compile Include="Plansza.cs" />
