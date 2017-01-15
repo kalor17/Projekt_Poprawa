@@ -8,5 +8,8 @@ namespace Projekt_Poprawa
 {
     interface IUstawieniaPlanszy
     {
+        bool CzyWygrana();
+        void WstawZnak(int indeks, int znak);
+        int[] ReturnTablica();
     }
 }
