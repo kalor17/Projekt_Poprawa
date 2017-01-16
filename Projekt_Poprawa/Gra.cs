@@ -9,7 +9,7 @@ namespace Projekt_Poprawa
     class Gra : IUstawieniaGry
     {
         private Gracz gracz;
-        private Komputer komputer = new Komputer();
+        private Komputer komputer;
         private Plansza plansza = new Plansza();
         private int ruch = 0; // 0 lub 1
         private bool mozna_grac = false;

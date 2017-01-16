@@ -18,7 +18,7 @@ namespace Projekt_Poprawa
 
         public override string Info()
         {
-            return nazwa + "\nWygranych: " + ReturnZwy();
+            return nazwa + "\nWygrane: " + ReturnZwy();
         }
 
         public int KomputerRuch(int[] tablica)

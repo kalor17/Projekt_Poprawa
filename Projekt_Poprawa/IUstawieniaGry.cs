@@ -20,5 +20,6 @@ namespace Projekt_Poprawa
         string ReturnZnakKomputer();
         string GraczInfo();
         string KomputerInfo();
+        int ReturnRemis();
     }
 }
