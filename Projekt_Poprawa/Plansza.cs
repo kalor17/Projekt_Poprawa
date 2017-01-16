@@ -16,7 +16,7 @@ namespace Projekt_Poprawa
         {
             tablica = new int[9];
             for (int i = 0; i < 9; i++)
-                tablica[i] = i + 3;
+               this.tablica[i] = i + 3;
             this.ilelRuchow = 0;
             this.ileRemisow = 0;
         }

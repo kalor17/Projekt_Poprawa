@@ -9,8 +9,8 @@ namespace Projekt_Poprawa
     class Gra : IUstawieniaGry
     {
         private Gracz gracz;
-        private Komputer komputer;
-        private Plansza plansza = new Plansza();
+        private Komputer komputer = new Komputer();
+        Plansza plansza = new Plansza();
         private int ruch = 0; // 0 lub 1
 
 
@@ -35,9 +35,12 @@ namespace Projekt_Poprawa
 
         public int WykonajRuchKomputera()
         {
-            int pole = komputer.KomputerRuch(plansza.ReturnTablica());
+            int[] tab = plansza.ReturnTablica();
+            int pole=0;
+            pole = komputer.KomputerRuch(tab);
             plansza.WstawZnak(pole, ruch);
-            ruch = 1;
+            ruch = 0;
+            
             return pole;
         }
 
@@ -48,6 +51,11 @@ namespace Projekt_Poprawa
         public bool CzyRemis()
         {
             return plansza.CzyRemis();
+        }
+
+        public int[] ReturnTab()
+        {
+            return plansza.ReturnTablica();
         }
     }
 }
