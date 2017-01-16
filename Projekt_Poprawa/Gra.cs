@@ -12,19 +12,20 @@ namespace Projekt_Poprawa
         private Komputer komputer = new Komputer();
         private Plansza plansza = new Plansza();
         private int ruch = 0; // 0 lub 1
+        private bool mozna_grac = false;
 
 
-        public void DodajGracza(string nazwa, char znak)
+        public void DodajGracza(string nazwa, string znak)
         {
             gracz = new Gracz(nazwa, znak);
         }
 
-        public void DodajKomputer(string nazwa)
+        public void DodajKomputer()
         {
-            komputer = new Komputer(nazwa);
-            if (gracz.ReturnZnak() == 'O') komputer.UstawZnak('X');
+            komputer = new Komputer();
+            if (gracz.ReturnZnak() == "O") komputer.UstawZnak("X");
             else
-                komputer.UstawZnak('O');
+                komputer.UstawZnak("O");
         }
 
         public void WykonajRuchGracza(int indeks)
@@ -53,9 +54,15 @@ namespace Projekt_Poprawa
             return plansza.CzyRemis();
         }
 
-        public int[] ReturnTab()
+        public bool ReturnMoznaGrac()
         {
-            return plansza.ReturnTablica();
+            return mozna_grac;
         }
+        public void UstawMoznaGrac(bool ustaw)
+        {
+            this.mozna_grac = ustaw;
+        }
+
+        
     }
 }

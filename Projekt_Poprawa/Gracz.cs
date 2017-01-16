@@ -10,7 +10,7 @@ namespace Projekt_Poprawa
     {
         public Gracz() { }
 
-        public Gracz(string nazwa, char znak)
+        public Gracz(string nazwa,  string znak)
         {
             this.nazwa = nazwa;
             this.znak = znak;

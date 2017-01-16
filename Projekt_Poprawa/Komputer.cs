@@ -8,11 +8,10 @@ namespace Projekt_Poprawa
 {
     class Komputer : Player
     {
-        public Komputer() { }
 
-        public Komputer(string nazwa)
+        public Komputer()
         {
-            this.nazwa = nazwa;
+            this.nazwa = "Komputer";
             this.lZwyc = 0;
         }
 

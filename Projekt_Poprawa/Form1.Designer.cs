@@ -39,6 +39,11 @@
             this.P8 = new System.Windows.Forms.Button();
             this.BGracze = new System.Windows.Forms.Button();
             this.BStart = new System.Windows.Forms.Button();
+            this.LNazwa = new System.Windows.Forms.Label();
+            this.LZnak = new System.Windows.Forms.Label();
+            this.TNazwa = new System.Windows.Forms.TextBox();
+            this.TZnak = new System.Windows.Forms.TextBox();
+            this.BDodaj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // P0
@@ -130,6 +135,7 @@
             this.BGracze.TabIndex = 9;
             this.BGracze.Text = "Ustaw Graczy";
             this.BGracze.UseVisualStyleBackColor = true;
+            this.BGracze.Click += new System.EventHandler(this.BGracze_Click);
             // 
             // BStart
             // 
@@ -141,11 +147,61 @@
             this.BStart.UseVisualStyleBackColor = true;
             this.BStart.Click += new System.EventHandler(this.BStart_Click);
             // 
+            // LNazwa
+            // 
+            this.LNazwa.AutoSize = true;
+            this.LNazwa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LNazwa.Location = new System.Drawing.Point(156, 13);
+            this.LNazwa.Name = "LNazwa";
+            this.LNazwa.Size = new System.Drawing.Size(61, 20);
+            this.LNazwa.TabIndex = 11;
+            this.LNazwa.Text = "Nazwa:";
+            // 
+            // LZnak
+            // 
+            this.LZnak.AutoSize = true;
+            this.LZnak.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LZnak.Location = new System.Drawing.Point(156, 43);
+            this.LZnak.Name = "LZnak";
+            this.LZnak.Size = new System.Drawing.Size(115, 20);
+            this.LZnak.TabIndex = 12;
+            this.LZnak.Text = "Znak (X lub O):";
+            // 
+            // TNazwa
+            // 
+            this.TNazwa.Location = new System.Drawing.Point(272, 13);
+            this.TNazwa.Name = "TNazwa";
+            this.TNazwa.Size = new System.Drawing.Size(100, 20);
+            this.TNazwa.TabIndex = 13;
+            // 
+            // TZnak
+            // 
+            this.TZnak.Location = new System.Drawing.Point(272, 45);
+            this.TZnak.Name = "TZnak";
+            this.TZnak.Size = new System.Drawing.Size(100, 20);
+            this.TZnak.TabIndex = 14;
+            // 
+            // BDodaj
+            // 
+            this.BDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BDodaj.Location = new System.Drawing.Point(402, 24);
+            this.BDodaj.Name = "BDodaj";
+            this.BDodaj.Size = new System.Drawing.Size(88, 27);
+            this.BDodaj.TabIndex = 15;
+            this.BDodaj.Text = "Dodaj";
+            this.BDodaj.UseVisualStyleBackColor = true;
+            this.BDodaj.Click += new System.EventHandler(this.BDodaj_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 471);
+            this.Controls.Add(this.BDodaj);
+            this.Controls.Add(this.TZnak);
+            this.Controls.Add(this.TNazwa);
+            this.Controls.Add(this.LZnak);
+            this.Controls.Add(this.LNazwa);
             this.Controls.Add(this.BStart);
             this.Controls.Add(this.BGracze);
             this.Controls.Add(this.P8);
@@ -160,6 +216,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -176,6 +233,11 @@
         private System.Windows.Forms.Button P8;
         private System.Windows.Forms.Button BGracze;
         private System.Windows.Forms.Button BStart;
+        private System.Windows.Forms.Label LNazwa;
+        private System.Windows.Forms.Label LZnak;
+        private System.Windows.Forms.TextBox TNazwa;
+        private System.Windows.Forms.TextBox TZnak;
+        private System.Windows.Forms.Button BDodaj;
     }
 }
 

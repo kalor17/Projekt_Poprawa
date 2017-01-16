@@ -12,7 +12,6 @@ namespace Projekt_Poprawa
 {
     public partial class Form1 : Form
     {
-        int a = 0;
         Gra gra = new Gra();
         Button[] przyciski = new Button[9];
         public Form1()
@@ -27,6 +26,8 @@ namespace Projekt_Poprawa
             przyciski[6] = P6;
             przyciski[7] = P7;
             przyciski[8] = P8;
+
+            UkryjElementy();
 
         }
 
@@ -78,15 +79,72 @@ namespace Projekt_Poprawa
 
         private void BStart_Click(object sender, EventArgs e)
         {
-            int c = 0;
+            
             try
             {
-                if (a == 0) throw new ArgumentOutOfRangeException();
+                
             }
             catch
             {
-                MessageBox.Show("Nie mozna zaczac");
+                
             }
+        }
+
+        private void UkryjElementy()
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                przyciski[i].Hide();
+            }
+            LNazwa.Hide();
+            LZnak.Hide();
+            TNazwa.Hide();
+            TZnak.Hide();
+            BDodaj.Hide();
+        }
+
+        private void BGracze_Click(object sender, EventArgs e)
+        {
+            LNazwa.Visible=true;
+            LZnak.Visible = true;
+            TNazwa.Visible = true;
+            TZnak.Visible = true;
+            BDodaj.Visible = true;
+        }
+
+        private void BDodaj_Click(object sender, EventArgs e)
+        {
+            bool ok = true;
+            string nazwa = TNazwa.Text;
+            string znak = TZnak.Text;
+
+            try
+            {
+                if (nazwa == "" || znak == "") throw new ArgumentOutOfRangeException();
+                if (znak != "X" && znak != "O") throw new ArgumentOutOfRangeException();
+            }
+            catch
+            {
+                ok = false;
+                MessageBox.Show("Podaj nazwe gracza or znak (X lub O)");
+            }
+
+            if (ok)
+            {
+                gra.DodajGracza(nazwa, znak);
+                gra.DodajKomputer();
+                gra.UstawMoznaGrac(true);
+                MessageBox.Show("Dodano Gracza i Komputer\nMożna zacząć grę");
+                TNazwa.Text = "";
+                TZnak.Text = "";
+
+                LNazwa.Hide();
+                LZnak.Hide();
+                TNazwa.Hide();
+                TZnak.Hide();
+                BDodaj.Hide();
+            }
+
         }
     }
 }

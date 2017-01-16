@@ -9,7 +9,7 @@ namespace Projekt_Poprawa
     abstract class Player
     {
         protected string nazwa;
-        protected char znak;
+        protected string znak;
         protected int lZwyc;
 
         public int ReturnZwy()
@@ -22,7 +22,7 @@ namespace Projekt_Poprawa
             this.lZwyc += 1;
         }
 
-        public void UstawZnak(char znak)
+        public void UstawZnak(string znak)
         {
             this.znak = znak;
         }
@@ -32,7 +32,7 @@ namespace Projekt_Poprawa
             this.lZwyc = 0;
         }
 
-        public char ReturnZnak()
+        public string ReturnZnak()
         {
             return this.znak;
         }
