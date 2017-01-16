@@ -16,5 +16,9 @@ namespace Projekt_Poprawa
         bool CzyRemis();
         bool ReturnMoznaGrac();
         void UstawMoznaGrac(bool ustaw);
+        string ReturnZnakGracz();
+        string ReturnZnakKomputer();
+        string GraczInfo();
+        string KomputerInfo();
     }
 }

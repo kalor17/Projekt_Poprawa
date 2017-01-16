@@ -41,17 +41,19 @@ namespace Projekt_Poprawa
             {
                 gra.WykonajRuchGracza(liczba);
                 b.Enabled = false;
-                b.Text = "O";
+                b.Text = gra.ReturnZnakGracz();
                 
 
                 if (gra.CzyWygrana())
                 {
                     MessageBox.Show("Koniec gry wygral Gracz");
+                    Wynik();
                 }
                 else
                 if (gra.CzyRemis() && gra.CzyWygrana()==false)
                 {
                     MessageBox.Show("Remis");
+                    Wynik();
                 }
                 else
                 {
@@ -59,16 +61,18 @@ namespace Projekt_Poprawa
                     {
                         int p = gra.WykonajRuchKomputera();
                         przyciski[p].Enabled = false;
-                        przyciski[p].Text = "X";
+                        przyciski[p].Text = gra.ReturnZnakKomputer();
                     }
                     if (gra.CzyWygrana())
                     {
                         MessageBox.Show("Koniec gry wygral Komputer");
+                        Wynik();
                     }
                     else
                     if (gra.CzyRemis() && gra.CzyWygrana() == false)
                     {
                         MessageBox.Show("Remis");
+                        Wynik();
                     }
                 }
 
@@ -79,14 +83,24 @@ namespace Projekt_Poprawa
 
         private void BStart_Click(object sender, EventArgs e)
         {
+            bool ok = true;
             
             try
             {
-                
+                if (gra.ReturnMoznaGrac() == false) throw new ArgumentOutOfRangeException();
             }
             catch
             {
-                
+                ok = false;
+                MessageBox.Show("Przed rozpoczęciem gry dodaj gracza");
+            }
+
+            if (ok)
+            {
+                for (int i = 0; i < 9; i++)
+                {
+                    przyciski[i].Visible=true;
+                }
             }
         }
 
@@ -145,6 +159,12 @@ namespace Projekt_Poprawa
                 BDodaj.Hide();
             }
 
+        }
+
+        private void Wynik()
+        {
+            LGraczWynik.Text = gra.GraczInfo() + Environment.NewLine + Environment.NewLine + "Remis: " + gra.ReturnRemis().ToString() + Environment.NewLine + Environment.NewLine + gra.KomputerInfo();
+            
         }
     }
 }

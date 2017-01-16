@@ -44,6 +44,9 @@
             this.TNazwa = new System.Windows.Forms.TextBox();
             this.TZnak = new System.Windows.Forms.TextBox();
             this.BDodaj = new System.Windows.Forms.Button();
+            this.LGraczWynik = new System.Windows.Forms.Label();
+            this.LRemis = new System.Windows.Forms.Label();
+            this.LInfoKomputer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // P0
@@ -192,11 +195,38 @@
             this.BDodaj.UseVisualStyleBackColor = true;
             this.BDodaj.Click += new System.EventHandler(this.BDodaj_Click);
             // 
+            // LGraczWynik
+            // 
+            this.LGraczWynik.AutoSize = true;
+            this.LGraczWynik.Location = new System.Drawing.Point(354, 152);
+            this.LGraczWynik.Name = "LGraczWynik";
+            this.LGraczWynik.Size = new System.Drawing.Size(0, 13);
+            this.LGraczWynik.TabIndex = 16;
+            // 
+            // LRemis
+            // 
+            this.LRemis.AutoSize = true;
+            this.LRemis.Location = new System.Drawing.Point(336, 200);
+            this.LRemis.Name = "LRemis";
+            this.LRemis.Size = new System.Drawing.Size(0, 13);
+            this.LRemis.TabIndex = 17;
+            // 
+            // LInfoKomputer
+            // 
+            this.LInfoKomputer.AutoSize = true;
+            this.LInfoKomputer.Location = new System.Drawing.Point(318, 243);
+            this.LInfoKomputer.Name = "LInfoKomputer";
+            this.LInfoKomputer.Size = new System.Drawing.Size(0, 13);
+            this.LInfoKomputer.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 471);
+            this.Controls.Add(this.LInfoKomputer);
+            this.Controls.Add(this.LRemis);
+            this.Controls.Add(this.LGraczWynik);
             this.Controls.Add(this.BDodaj);
             this.Controls.Add(this.TZnak);
             this.Controls.Add(this.TNazwa);
@@ -238,6 +268,9 @@
         private System.Windows.Forms.TextBox TNazwa;
         private System.Windows.Forms.TextBox TZnak;
         private System.Windows.Forms.Button BDodaj;
+        private System.Windows.Forms.Label LGraczWynik;
+        private System.Windows.Forms.Label LRemis;
+        private System.Windows.Forms.Label LInfoKomputer;
     }
 }
 

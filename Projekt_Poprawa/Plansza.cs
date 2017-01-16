@@ -69,5 +69,10 @@ namespace Projekt_Poprawa
             }
             return false;
         }
+
+        public int ReturnRemis()
+        {
+            return ileRemisow;
+        }
     }
 }

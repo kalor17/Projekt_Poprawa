@@ -62,7 +62,29 @@ namespace Projekt_Poprawa
         {
             this.mozna_grac = ustaw;
         }
+        public string ReturnZnakGracz()
+        {
+            return gracz.ReturnZnak();
+        }
 
+        public string ReturnZnakKomputer()
+        {
+            return komputer.ReturnZnak();
+        }
+
+        public string GraczInfo()
+        {
+            return gracz.Info();
+        }
+
+        public string KomputerInfo()
+        {
+            return komputer.Info();
+        }
+        public int ReturnRemis()
+        {
+            return plansza.ReturnRemis();
+        }
         
     }
 }
