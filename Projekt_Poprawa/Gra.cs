@@ -10,7 +10,7 @@ namespace Projekt_Poprawa
     {
         private Gracz gracz;
         private Komputer komputer = new Komputer();
-        Plansza plansza = new Plansza();
+        private Plansza plansza = new Plansza();
         private int ruch = 0; // 0 lub 1
 
 

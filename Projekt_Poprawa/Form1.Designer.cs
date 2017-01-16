@@ -37,11 +37,13 @@
             this.P6 = new System.Windows.Forms.Button();
             this.P7 = new System.Windows.Forms.Button();
             this.P8 = new System.Windows.Forms.Button();
+            this.BGracze = new System.Windows.Forms.Button();
+            this.BStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // P0
             // 
-            this.P0.Location = new System.Drawing.Point(64, 91);
+            this.P0.Location = new System.Drawing.Point(61, 142);
             this.P0.Name = "P0";
             this.P0.Size = new System.Drawing.Size(71, 72);
             this.P0.TabIndex = 0;
@@ -50,7 +52,7 @@
             // 
             // P1
             // 
-            this.P1.Location = new System.Drawing.Point(141, 91);
+            this.P1.Location = new System.Drawing.Point(138, 142);
             this.P1.Name = "P1";
             this.P1.Size = new System.Drawing.Size(71, 72);
             this.P1.TabIndex = 1;
@@ -59,7 +61,7 @@
             // 
             // P2
             // 
-            this.P2.Location = new System.Drawing.Point(218, 91);
+            this.P2.Location = new System.Drawing.Point(215, 142);
             this.P2.Name = "P2";
             this.P2.Size = new System.Drawing.Size(71, 72);
             this.P2.TabIndex = 2;
@@ -68,7 +70,7 @@
             // 
             // P3
             // 
-            this.P3.Location = new System.Drawing.Point(64, 169);
+            this.P3.Location = new System.Drawing.Point(61, 220);
             this.P3.Name = "P3";
             this.P3.Size = new System.Drawing.Size(71, 72);
             this.P3.TabIndex = 3;
@@ -77,7 +79,7 @@
             // 
             // P4
             // 
-            this.P4.Location = new System.Drawing.Point(141, 169);
+            this.P4.Location = new System.Drawing.Point(138, 220);
             this.P4.Name = "P4";
             this.P4.Size = new System.Drawing.Size(71, 72);
             this.P4.TabIndex = 4;
@@ -86,7 +88,7 @@
             // 
             // P5
             // 
-            this.P5.Location = new System.Drawing.Point(218, 169);
+            this.P5.Location = new System.Drawing.Point(215, 220);
             this.P5.Name = "P5";
             this.P5.Size = new System.Drawing.Size(71, 72);
             this.P5.TabIndex = 5;
@@ -95,7 +97,7 @@
             // 
             // P6
             // 
-            this.P6.Location = new System.Drawing.Point(64, 247);
+            this.P6.Location = new System.Drawing.Point(61, 298);
             this.P6.Name = "P6";
             this.P6.Size = new System.Drawing.Size(71, 72);
             this.P6.TabIndex = 6;
@@ -104,7 +106,7 @@
             // 
             // P7
             // 
-            this.P7.Location = new System.Drawing.Point(141, 247);
+            this.P7.Location = new System.Drawing.Point(138, 298);
             this.P7.Name = "P7";
             this.P7.Size = new System.Drawing.Size(71, 72);
             this.P7.TabIndex = 7;
@@ -113,18 +115,39 @@
             // 
             // P8
             // 
-            this.P8.Location = new System.Drawing.Point(218, 247);
+            this.P8.Location = new System.Drawing.Point(215, 298);
             this.P8.Name = "P8";
             this.P8.Size = new System.Drawing.Size(71, 72);
             this.P8.TabIndex = 8;
             this.P8.UseVisualStyleBackColor = true;
             this.P8.Click += new System.EventHandler(this.PClick);
             // 
+            // BGracze
+            // 
+            this.BGracze.Location = new System.Drawing.Point(22, 13);
+            this.BGracze.Name = "BGracze";
+            this.BGracze.Size = new System.Drawing.Size(86, 28);
+            this.BGracze.TabIndex = 9;
+            this.BGracze.Text = "Ustaw Graczy";
+            this.BGracze.UseVisualStyleBackColor = true;
+            // 
+            // BStart
+            // 
+            this.BStart.Location = new System.Drawing.Point(22, 60);
+            this.BStart.Name = "BStart";
+            this.BStart.Size = new System.Drawing.Size(86, 28);
+            this.BStart.TabIndex = 10;
+            this.BStart.Text = "START";
+            this.BStart.UseVisualStyleBackColor = true;
+            this.BStart.Click += new System.EventHandler(this.BStart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 471);
+            this.Controls.Add(this.BStart);
+            this.Controls.Add(this.BGracze);
             this.Controls.Add(this.P8);
             this.Controls.Add(this.P7);
             this.Controls.Add(this.P6);
@@ -151,6 +174,8 @@
         private System.Windows.Forms.Button P6;
         private System.Windows.Forms.Button P7;
         private System.Windows.Forms.Button P8;
+        private System.Windows.Forms.Button BGracze;
+        private System.Windows.Forms.Button BStart;
     }
 }
 

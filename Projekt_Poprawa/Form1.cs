@@ -12,6 +12,7 @@ namespace Projekt_Poprawa
 {
     public partial class Form1 : Form
     {
+        int a = 0;
         Gra gra = new Gra();
         Button[] przyciski = new Button[9];
         public Form1()
@@ -72,6 +73,19 @@ namespace Projekt_Poprawa
 
                 
                 
+            }
+        }
+
+        private void BStart_Click(object sender, EventArgs e)
+        {
+            int c = 0;
+            try
+            {
+                if (a == 0) throw new ArgumentOutOfRangeException();
+            }
+            catch
+            {
+                MessageBox.Show("Nie mozna zaczac");
             }
         }
     }

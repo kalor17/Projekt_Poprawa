@@ -45,7 +45,7 @@ namespace Projekt_Poprawa
 
         }
 
-        public int WygrajZablokuj(int[] tablica, int znak)
+        private int WygrajZablokuj(int[] tablica, int znak)
         {
             // Szukanie poziomo
             if ((tablica[0] == znak) && (tablica[1] == znak) && (tablica[2] > 1)) return 2;
@@ -85,7 +85,7 @@ namespace Projekt_Poprawa
             return -1;
         }
 
-        public int WstawRog(int[] tablica)
+        private int WstawRog(int[] tablica)
         {
             if (tablica[0] == 1)
             {
@@ -123,7 +123,7 @@ namespace Projekt_Poprawa
             return -1;
         }
 
-        public int WolneMiejsce(int[] tablica)
+        private int WolneMiejsce(int[] tablica)
         {
             int i = 0;
             foreach (var element in tablica)
