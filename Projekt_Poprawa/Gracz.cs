@@ -10,15 +10,10 @@ namespace Projekt_Poprawa
     {
         public Gracz() { }
 
-        public Gracz(string nazwa,  string znak)
+        public Gracz(string nazwa, string znak)
         {
             this.nazwa = nazwa;
             this.znak = znak;
-            this.lZwyc = 0;
-        }
-        public Gracz(string nazwa)
-        {
-            this.nazwa = nazwa;
             this.lZwyc = 0;
         }
 

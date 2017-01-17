@@ -16,7 +16,7 @@ namespace Projekt_Poprawa
         {
             tablica = new int[9];
             for (int i = 0; i < 9; i++)
-               this.tablica[i] = i + 3;
+                this.tablica[i] = i + 3;
             this.ilelRuchow = 0;
             this.ileRemisow = 0;
         }
@@ -38,23 +38,23 @@ namespace Projekt_Poprawa
             //Sprawdzanie poziomo
             if ((tablica[0] == tablica[1]) && (tablica[1] == tablica[2])) a = true;
             else
-            if ((tablica[3] == tablica[4]) && (tablica[4] == tablica[5])) a = true;
-            else
-            if ((tablica[6] == tablica[7]) && (tablica[7] == tablica[8])) a = true;
-            else
+                if ((tablica[3] == tablica[4]) && (tablica[4] == tablica[5])) a = true;
+                else
+                    if ((tablica[6] == tablica[7]) && (tablica[7] == tablica[8])) a = true;
+                    else
 
-            //Sprawdzanie pionowo
-            if ((tablica[0] == tablica[3]) && (tablica[3] == tablica[6])) a = true;
-            else
-            if ((tablica[1] == tablica[4]) && (tablica[4] == tablica[7])) a = true;
-            else
-            if ((tablica[2] == tablica[5]) && (tablica[5] == tablica[8])) a = true;
-            else
+                        //Sprawdzanie pionowo
+                        if ((tablica[0] == tablica[3]) && (tablica[3] == tablica[6])) a = true;
+                        else
+                            if ((tablica[1] == tablica[4]) && (tablica[4] == tablica[7])) a = true;
+                            else
+                                if ((tablica[2] == tablica[5]) && (tablica[5] == tablica[8])) a = true;
+                                else
 
-            //Sprawdzanie przekątnych
-            if ((tablica[0] == tablica[4]) && (tablica[4] == tablica[8])) a = true;
-            else
-            if ((tablica[6] == tablica[4]) && (tablica[4] == tablica[2])) a = true;
+                                    //Sprawdzanie przekątnych
+                                    if ((tablica[0] == tablica[4]) && (tablica[4] == tablica[8])) a = true;
+                                    else
+                                        if ((tablica[6] == tablica[4]) && (tablica[4] == tablica[2])) a = true;
 
 
             return a;

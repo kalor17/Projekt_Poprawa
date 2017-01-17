@@ -49,10 +49,6 @@
             this.BNowaGra = new System.Windows.Forms.Button();
             this.BResetStat = new System.Windows.Forms.Button();
             this.BResetGry = new System.Windows.Forms.Button();
-            this.BGraczvsKomputer = new System.Windows.Forms.Button();
-            this.BGraczvsGracz = new System.Windows.Forms.Button();
-            this.LGracz2 = new System.Windows.Forms.Label();
-            this.TNazwa2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // P0
@@ -138,7 +134,7 @@
             // 
             // BGracze
             // 
-            this.BGracze.Location = new System.Drawing.Point(104, 91);
+            this.BGracze.Location = new System.Drawing.Point(22, 13);
             this.BGracze.Name = "BGracze";
             this.BGracze.Size = new System.Drawing.Size(86, 28);
             this.BGracze.TabIndex = 9;
@@ -148,7 +144,7 @@
             // 
             // BStart
             // 
-            this.BStart.Location = new System.Drawing.Point(12, 91);
+            this.BStart.Location = new System.Drawing.Point(22, 60);
             this.BStart.Name = "BStart";
             this.BStart.Size = new System.Drawing.Size(86, 28);
             this.BStart.TabIndex = 10;
@@ -160,17 +156,17 @@
             // 
             this.LNazwa.AutoSize = true;
             this.LNazwa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LNazwa.Location = new System.Drawing.Point(219, 14);
+            this.LNazwa.Location = new System.Drawing.Point(156, 13);
             this.LNazwa.Name = "LNazwa";
-            this.LNazwa.Size = new System.Drawing.Size(126, 20);
+            this.LNazwa.Size = new System.Drawing.Size(61, 20);
             this.LNazwa.TabIndex = 11;
-            this.LNazwa.Text = "Nazwa Gracza1:";
+            this.LNazwa.Text = "Nazwa:";
             // 
             // LZnak
             // 
             this.LZnak.AutoSize = true;
             this.LZnak.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LZnak.Location = new System.Drawing.Point(219, 44);
+            this.LZnak.Location = new System.Drawing.Point(156, 43);
             this.LZnak.Name = "LZnak";
             this.LZnak.Size = new System.Drawing.Size(115, 20);
             this.LZnak.TabIndex = 12;
@@ -178,14 +174,14 @@
             // 
             // TNazwa
             // 
-            this.TNazwa.Location = new System.Drawing.Point(351, 14);
+            this.TNazwa.Location = new System.Drawing.Point(272, 13);
             this.TNazwa.Name = "TNazwa";
             this.TNazwa.Size = new System.Drawing.Size(100, 20);
             this.TNazwa.TabIndex = 13;
             // 
             // TZnak
             // 
-            this.TZnak.Location = new System.Drawing.Point(351, 47);
+            this.TZnak.Location = new System.Drawing.Point(272, 45);
             this.TZnak.Name = "TZnak";
             this.TZnak.Size = new System.Drawing.Size(100, 20);
             this.TZnak.TabIndex = 14;
@@ -193,7 +189,7 @@
             // BDodaj
             // 
             this.BDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.BDodaj.Location = new System.Drawing.Point(467, 37);
+            this.BDodaj.Location = new System.Drawing.Point(402, 24);
             this.BDodaj.Name = "BDodaj";
             this.BDodaj.Size = new System.Drawing.Size(88, 27);
             this.BDodaj.TabIndex = 15;
@@ -254,52 +250,11 @@
             this.BResetGry.UseVisualStyleBackColor = true;
             this.BResetGry.Click += new System.EventHandler(this.BResetGry_Click);
             // 
-            // BGraczvsKomputer
-            // 
-            this.BGraczvsKomputer.Location = new System.Drawing.Point(12, 13);
-            this.BGraczvsKomputer.Name = "BGraczvsKomputer";
-            this.BGraczvsKomputer.Size = new System.Drawing.Size(110, 23);
-            this.BGraczvsKomputer.TabIndex = 21;
-            this.BGraczvsKomputer.Text = "Gracz vs Komputer";
-            this.BGraczvsKomputer.UseVisualStyleBackColor = true;
-            this.BGraczvsKomputer.Click += new System.EventHandler(this.BGraczvsKomputer_Click);
-            // 
-            // BGraczvsGracz
-            // 
-            this.BGraczvsGracz.Location = new System.Drawing.Point(12, 45);
-            this.BGraczvsGracz.Name = "BGraczvsGracz";
-            this.BGraczvsGracz.Size = new System.Drawing.Size(110, 23);
-            this.BGraczvsGracz.TabIndex = 22;
-            this.BGraczvsGracz.Text = "Gracz vs Gracz";
-            this.BGraczvsGracz.UseVisualStyleBackColor = true;
-            this.BGraczvsGracz.Click += new System.EventHandler(this.BGraczvsGracz_Click);
-            // 
-            // LGracz2
-            // 
-            this.LGracz2.AutoSize = true;
-            this.LGracz2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LGracz2.Location = new System.Drawing.Point(219, 79);
-            this.LGracz2.Name = "LGracz2";
-            this.LGracz2.Size = new System.Drawing.Size(126, 20);
-            this.LGracz2.TabIndex = 23;
-            this.LGracz2.Text = "Nazwa Gracza2:";
-            // 
-            // TNazwa2
-            // 
-            this.TNazwa2.Location = new System.Drawing.Point(351, 79);
-            this.TNazwa2.Name = "TNazwa2";
-            this.TNazwa2.Size = new System.Drawing.Size(100, 20);
-            this.TNazwa2.TabIndex = 24;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 471);
-            this.Controls.Add(this.TNazwa2);
-            this.Controls.Add(this.LGracz2);
-            this.Controls.Add(this.BGraczvsGracz);
-            this.Controls.Add(this.BGraczvsKomputer);
             this.Controls.Add(this.BResetGry);
             this.Controls.Add(this.BResetStat);
             this.Controls.Add(this.BNowaGra);
@@ -353,10 +308,6 @@
         private System.Windows.Forms.Button BNowaGra;
         private System.Windows.Forms.Button BResetStat;
         private System.Windows.Forms.Button BResetGry;
-        private System.Windows.Forms.Button BGraczvsKomputer;
-        private System.Windows.Forms.Button BGraczvsGracz;
-        private System.Windows.Forms.Label LGracz2;
-        private System.Windows.Forms.TextBox TNazwa2;
     }
 }
 
