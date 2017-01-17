@@ -276,8 +276,10 @@
             this.Controls.Add(this.P2);
             this.Controls.Add(this.P1);
             this.Controls.Add(this.P0);
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.Text = "Kolko_Krzyzyk";
             this.ResumeLayout(false);
             this.PerformLayout();
 
