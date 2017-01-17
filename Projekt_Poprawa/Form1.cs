@@ -117,33 +117,6 @@ namespace Projekt_Poprawa
                 BGracze.Visible = false;
             }
         }
-
-        private void UkryjElementy()
-        {
-            for (int i = 0; i < 9; i++)
-            {
-                przyciski[i].Hide();
-            }
-            LNazwa.Hide();
-            LZnak.Hide();
-            TNazwa.Hide();
-            TZnak.Hide();
-            BDodaj.Hide();
-            BNowaGra.Hide();
-            BResetStat.Hide();
-            BResetGry.Hide();
-            LGraczWynik.Hide();
-        }
-
-        private void BGracze_Click(object sender, EventArgs e)
-        {
-            LNazwa.Visible = true;
-            LZnak.Visible = true;
-            TNazwa.Visible = true;
-            TZnak.Visible = true;
-            BDodaj.Visible = true;
-        }
-
         private void BDodaj_Click(object sender, EventArgs e)
         {
             bool ok = true;
@@ -178,13 +151,41 @@ namespace Projekt_Poprawa
             }
 
         }
+        #region Ustawienia Przyciskow + Wynik
+        private void UkryjElementy()
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                przyciski[i].Hide();
+            }
+            LNazwa.Hide();
+            LZnak.Hide();
+            TNazwa.Hide();
+            TZnak.Hide();
+            BDodaj.Hide();
+            BNowaGra.Hide();
+            BResetStat.Hide();
+            BResetGry.Hide();
+            LGraczWynik.Hide();
+        }
+
+        private void BGracze_Click(object sender, EventArgs e)
+        {
+            LNazwa.Visible = true;
+            LZnak.Visible = true;
+            TNazwa.Visible = true;
+            TZnak.Visible = true;
+            BDodaj.Visible = true;
+        }
+
+        
 
         private void Wynik()
         {
             LGraczWynik.Text = gra.GraczInfo() + Environment.NewLine + Environment.NewLine + "Remis: " + gra.ReturnRemis().ToString() + Environment.NewLine + Environment.NewLine + gra.KomputerInfo();
 
         }
-
+        
         private void BlokowaniePrzyciskow()
         {
             for (int i = 0; i < 9; i++)
@@ -233,5 +234,6 @@ namespace Projekt_Poprawa
             }
             BGracze.Visible = true;
         }
+        #endregion
     }
 }
