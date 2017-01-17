@@ -213,6 +213,7 @@ namespace Projekt_Poprawa
                 przyciski[i].Text = "";
             }
             Wynik();
+            BlokowaniePrzyciskow();
         }
     }
 }
