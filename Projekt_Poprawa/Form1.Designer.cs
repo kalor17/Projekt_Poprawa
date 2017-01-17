@@ -48,6 +48,7 @@
             this.BWyjscie = new System.Windows.Forms.Button();
             this.BNowaGra = new System.Windows.Forms.Button();
             this.BResetStat = new System.Windows.Forms.Button();
+            this.BResetGry = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // P0
@@ -238,11 +239,23 @@
             this.BResetStat.UseVisualStyleBackColor = true;
             this.BResetStat.Click += new System.EventHandler(this.BResetStat_Click);
             // 
+            // BResetGry
+            // 
+            this.BResetGry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BResetGry.Location = new System.Drawing.Point(245, 406);
+            this.BResetGry.Name = "BResetGry";
+            this.BResetGry.Size = new System.Drawing.Size(96, 34);
+            this.BResetGry.TabIndex = 20;
+            this.BResetGry.Text = "Reset Gry";
+            this.BResetGry.UseVisualStyleBackColor = true;
+            this.BResetGry.Click += new System.EventHandler(this.BResetGry_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 471);
+            this.Controls.Add(this.BResetGry);
             this.Controls.Add(this.BResetStat);
             this.Controls.Add(this.BNowaGra);
             this.Controls.Add(this.BWyjscie);
@@ -292,6 +305,7 @@
         private System.Windows.Forms.Button BWyjscie;
         private System.Windows.Forms.Button BNowaGra;
         private System.Windows.Forms.Button BResetStat;
+        private System.Windows.Forms.Button BResetGry;
     }
 }
 

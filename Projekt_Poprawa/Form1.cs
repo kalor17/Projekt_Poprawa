@@ -111,6 +111,9 @@ namespace Projekt_Poprawa
                 }
                 BNowaGra.Visible = true;
                 BResetStat.Visible = true;
+                BResetGry.Visible = true;
+                LGraczWynik.Visible = true;
+                Wynik();
             }
         }
 
@@ -127,6 +130,8 @@ namespace Projekt_Poprawa
             BDodaj.Hide();
             BNowaGra.Hide();
             BResetStat.Hide();
+            BResetGry.Hide();
+            LGraczWynik.Hide();
         }
 
         private void BGracze_Click(object sender, EventArgs e)
@@ -213,7 +218,18 @@ namespace Projekt_Poprawa
                 przyciski[i].Text = "";
             }
             Wynik();
-            BlokowaniePrzyciskow();
+        }
+
+        private void BResetGry_Click(object sender, EventArgs e)
+        {
+            UkryjElementy();
+            gra = new Gra();
+            for (int i = 0; i < 9; i++)
+            {
+                przyciski[i].Enabled = true;
+                przyciski[i].BackColor = Color.White;
+                przyciski[i].Text = "";
+            }
         }
     }
 }
