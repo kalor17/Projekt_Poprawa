@@ -45,6 +45,7 @@
             this.TZnak = new System.Windows.Forms.TextBox();
             this.BDodaj = new System.Windows.Forms.Button();
             this.LGraczWynik = new System.Windows.Forms.Label();
+            this.BWyjscie = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // P0
@@ -202,11 +203,23 @@
             this.LGraczWynik.Size = new System.Drawing.Size(0, 18);
             this.LGraczWynik.TabIndex = 16;
             // 
+            // BWyjscie
+            // 
+            this.BWyjscie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BWyjscie.Location = new System.Drawing.Point(402, 405);
+            this.BWyjscie.Name = "BWyjscie";
+            this.BWyjscie.Size = new System.Drawing.Size(108, 38);
+            this.BWyjscie.TabIndex = 17;
+            this.BWyjscie.Text = "Wyjscie";
+            this.BWyjscie.UseVisualStyleBackColor = true;
+            this.BWyjscie.Click += new System.EventHandler(this.BWyjscie_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 471);
+            this.Controls.Add(this.BWyjscie);
             this.Controls.Add(this.LGraczWynik);
             this.Controls.Add(this.BDodaj);
             this.Controls.Add(this.TZnak);
@@ -250,6 +263,7 @@
         private System.Windows.Forms.TextBox TZnak;
         private System.Windows.Forms.Button BDodaj;
         private System.Windows.Forms.Label LGraczWynik;
+        private System.Windows.Forms.Button BWyjscie;
     }
 }
 

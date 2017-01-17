@@ -11,5 +11,6 @@ namespace Projekt_Poprawa
         bool CzyWygrana();
         void WstawZnak(int indeks, int znak);
         int[] ReturnTablica();
+        int ReturnRemis();
     }
 }

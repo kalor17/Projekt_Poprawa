@@ -85,6 +85,14 @@ namespace Projekt_Poprawa
         {
             return plansza.ReturnRemis();
         }
+        public void ZwiekszZwyGracz()
+        {
+            gracz.ZwiekszZwy();
+        }
+        public void ZwiekszZwyKomputer()
+        {
+            komputer.ZwiekszZwy();
+        }
         
     }
 }

@@ -47,12 +47,15 @@ namespace Projekt_Poprawa
                 if (gra.CzyWygrana())
                 {
                     MessageBox.Show("Koniec gry wygral Gracz");
+                    gra.ZwiekszZwyGracz();
+                    BlokowaniePrzyciskow();
                     Wynik();
                 }
                 else
                 if (gra.CzyRemis() && gra.CzyWygrana()==false)
                 {
                     MessageBox.Show("Remis");
+                    BlokowaniePrzyciskow();
                     Wynik();
                 }
                 else
@@ -66,12 +69,15 @@ namespace Projekt_Poprawa
                     if (gra.CzyWygrana())
                     {
                         MessageBox.Show("Koniec gry wygral Komputer");
+                        gra.ZwiekszZwyKomputer();
+                        BlokowaniePrzyciskow();
                         Wynik();
                     }
                     else
                     if (gra.CzyRemis() && gra.CzyWygrana() == false)
                     {
                         MessageBox.Show("Remis");
+                        BlokowaniePrzyciskow();
                         Wynik();
                     }
                 }
@@ -165,6 +171,19 @@ namespace Projekt_Poprawa
         {
             LGraczWynik.Text = gra.GraczInfo() + Environment.NewLine + Environment.NewLine + "Remis: " + gra.ReturnRemis().ToString() + Environment.NewLine + Environment.NewLine + gra.KomputerInfo();
             
+        }
+
+        private void BlokowaniePrzyciskow()
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                przyciski[i].Enabled = false;
+            }
+        }
+
+        private void BWyjscie_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
