@@ -10,6 +10,6 @@ namespace Projekt_Poprawa
     {
         void DodajGracza(string nazwa, string znak);
         void DodajKomputer();
-        
+        void DodajGracza2(string nazwa);
     }
 }

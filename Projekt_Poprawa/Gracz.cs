@@ -16,6 +16,11 @@ namespace Projekt_Poprawa
             this.znak = znak;
             this.lZwyc = 0;
         }
+        public Gracz(string nazwa)
+        {
+            this.nazwa = nazwa;
+            this.lZwyc = 0;
+        }
 
         public override string Info()
         {

@@ -12,6 +12,7 @@ namespace Projekt_Poprawa
 {
     public partial class Form1 : Form
     {
+        int z;
         Gra gra = new Gra();
         Button[] przyciski = new Button[9];
         public Form1()
@@ -26,7 +27,7 @@ namespace Projekt_Poprawa
             przyciski[6] = P6;
             przyciski[7] = P7;
             przyciski[8] = P8;
-
+            z = 0;
             UkryjElementy();
 
         }
@@ -37,13 +38,13 @@ namespace Projekt_Poprawa
             string nazwa = b.Name;
             int liczba = (int)Char.GetNumericValue(nazwa[1]);
 
-            if (b.Text == "")
+            if (z == 0)
             {
                 gra.WykonajRuchGracza(liczba);
                 b.Enabled = false;
                 b.Text = gra.ReturnZnakGracz();
                 b.BackColor = Color.GreenYellow;
-                
+                z = 1;
 
                 if (gra.CzyWygrana())
                 {
@@ -61,26 +62,53 @@ namespace Projekt_Poprawa
                 }
                 else
                 {
-                    if (gra.CzyWygrana() == false && gra.CzyRemis() == false)
+                    if (z == 1 && gra.ReturnGraczVsGracz() == true)
                     {
-                        int p = gra.WykonajRuchKomputera();
-                        przyciski[p].Enabled = false;
-                        przyciski[p].Text = gra.ReturnZnakKomputer();
-                        przyciski[p].BackColor = Color.LightBlue;
-                    }
-                    if (gra.CzyWygrana())
-                    {
-                        MessageBox.Show("Koniec gry wygral Komputer");
-                        gra.ZwiekszZwyKomputer();
-                        BlokowaniePrzyciskow();
-                        Wynik();
+                        gra.WykonajRuchGracza2(liczba);
+                        b.Enabled = false;
+                        b.Text = gra.ReturnZnakGracz2();
+                        b.BackColor = Color.LightBlue;
+                        z = 0;
+
+
+                        if (gra.CzyWygrana())
+                        {
+                            MessageBox.Show("Koniec gry wygral Gracz");
+                            gra.ZwiekszZwyGracz2();
+                            BlokowaniePrzyciskow();
+                            Wynik();
+                        }
+                        else
+                            if (gra.CzyRemis() && gra.CzyWygrana() == false)
+                            {
+                                MessageBox.Show("Remis");
+                                BlokowaniePrzyciskow();
+                                Wynik();
+                            }
                     }
                     else
-                    if (gra.CzyRemis() && gra.CzyWygrana() == false)
                     {
-                        MessageBox.Show("Remis");
-                        BlokowaniePrzyciskow();
-                        Wynik();
+                        if (gra.CzyWygrana() == false && gra.CzyRemis() == false)
+                        {
+                            int p = gra.WykonajRuchKomputera();
+                            przyciski[p].Enabled = false;
+                            przyciski[p].Text = gra.ReturnZnakKomputer();
+                            przyciski[p].BackColor = Color.LightBlue;
+                        }
+                        if (gra.CzyWygrana())
+                        {
+                            MessageBox.Show("Koniec gry wygral Komputer");
+                            gra.ZwiekszZwyKomputer();
+                            BlokowaniePrzyciskow();
+                            Wynik();
+                        }
+                        else
+                            if (gra.CzyRemis() && gra.CzyWygrana() == false)
+                            {
+                                MessageBox.Show("Remis");
+                                BlokowaniePrzyciskow();
+                                Wynik();
+                            }
                     }
                 }
 
@@ -132,6 +160,10 @@ namespace Projekt_Poprawa
             BResetStat.Hide();
             BResetGry.Hide();
             LGraczWynik.Hide();
+            BStart.Hide();
+            BGracze.Hide();
+            LGracz2.Hide();
+            TNazwa2.Hide();
         }
 
         private void BGracze_Click(object sender, EventArgs e)
@@ -141,6 +173,11 @@ namespace Projekt_Poprawa
             TNazwa.Visible = true;
             TZnak.Visible = true;
             BDodaj.Visible = true;
+            if (gra.ReturnGraczVsGracz())
+            {
+                LGracz2.Visible = true;
+                TNazwa2.Visible = true;
+            }
         }
 
         private void BDodaj_Click(object sender, EventArgs e)
@@ -149,38 +186,81 @@ namespace Projekt_Poprawa
             string nazwa = TNazwa.Text;
             string znak = TZnak.Text;
 
-            try
+            if (gra.ReturnGraczVsGracz() == false)
             {
-                if (nazwa == "" || znak == "") throw new ArgumentOutOfRangeException();
-                if (znak != "X" && znak != "O") throw new ArgumentOutOfRangeException();
-            }
-            catch
-            {
-                ok = false;
-                MessageBox.Show("Podaj nazwe gracza or znak (X lub O)");
-            }
+                try
+                {
+                    if (nazwa == "" || znak == "") throw new ArgumentOutOfRangeException();
+                    if (znak != "X" && znak != "O") throw new ArgumentOutOfRangeException();
+                }
+                catch
+                {
+                    ok = false;
+                    MessageBox.Show("Podaj nazwe gracza or znak (X lub O)");
+                }
 
-            if (ok)
-            {
-                gra.DodajGracza(nazwa, znak);
-                gra.DodajKomputer();
-                gra.UstawMoznaGrac(true);
-                MessageBox.Show("Dodano Gracza i Komputer\nMożna zacząć grę");
-                TNazwa.Text = "";
-                TZnak.Text = "";
+                if (ok)
+                {
+                    gra.DodajGracza(nazwa, znak);
+                    gra.DodajKomputer();
+                    gra.UstawMoznaGrac(true);
+                    MessageBox.Show("Dodano Gracza i Komputer\nMożna zacząć grę");
+                    TNazwa.Text = "";
+                    TZnak.Text = "";
 
-                LNazwa.Hide();
-                LZnak.Hide();
-                TNazwa.Hide();
-                TZnak.Hide();
-                BDodaj.Hide();
+                    LNazwa.Hide();
+                    LZnak.Hide();
+                    TNazwa.Hide();
+                    TZnak.Hide();
+                    BDodaj.Hide();
+                }
+            }
+            else
+            {
+                string nazwa2 = TNazwa2.Text;
+                try
+                {
+                    if (nazwa == "" || znak == "" || nazwa=="") throw new ArgumentOutOfRangeException();
+                    if (znak != "X" && znak != "O") throw new ArgumentOutOfRangeException();
+                }
+                catch
+                {
+                    ok = false;
+                    MessageBox.Show("Podaj nazwy graczy oraz znak (X lub O)");
+                }
+
+                if (ok)
+                {
+                    gra.DodajGracza(nazwa, znak);
+                    gra.DodajGracza2(nazwa2);
+                    gra.UstawMoznaGrac(true);
+                    MessageBox.Show("Dodano Gracza1 i Gracza2\nMożna zacząć grę");
+                    TNazwa.Text = "";
+                    TZnak.Text = "";
+
+                    LNazwa.Hide();
+                    TNazwa2.Hide();
+                    LGracz2.Hide();
+                    LZnak.Hide();
+                    TNazwa.Hide();
+                    TZnak.Hide();
+                    BDodaj.Hide();
+                }
             }
 
         }
 
         private void Wynik()
         {
-            LGraczWynik.Text = gra.GraczInfo() + Environment.NewLine + Environment.NewLine + "Remis: " + gra.ReturnRemis().ToString() + Environment.NewLine + Environment.NewLine + gra.KomputerInfo();
+            if (gra.ReturnGraczVsGracz() == false)
+            {
+                LGraczWynik.Text = gra.GraczInfo() + Environment.NewLine + Environment.NewLine + "Remis: " + gra.ReturnRemis().ToString() + Environment.NewLine + Environment.NewLine + gra.KomputerInfo();
+            }
+            else
+            {
+                LGraczWynik.Text = gra.GraczInfo() + Environment.NewLine + Environment.NewLine + "Remis: " + gra.ReturnRemis().ToString() + Environment.NewLine + Environment.NewLine + gra.Gracz2Info();
+            }
+            
             
         }
 
@@ -230,6 +310,22 @@ namespace Projekt_Poprawa
                 przyciski[i].BackColor = Color.White;
                 przyciski[i].Text = "";
             }
+        }
+
+        private void BGraczvsKomputer_Click(object sender, EventArgs e)
+        {
+            gra.UstawGraczvsGracz(false);
+            BGracze.Visible = true;
+            BStart.Visible = true;
+            BGraczvsGracz.Hide();
+        }
+
+        private void BGraczvsGracz_Click(object sender, EventArgs e)
+        {
+            gra.UstawGraczvsGracz(true);
+            BGracze.Visible = true;
+            BStart.Visible = true;
+            BGraczvsKomputer.Hide();
         }
     }
 }
