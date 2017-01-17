@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekt_Poprawa
 {
-    class Gra : IUstawieniaGry, IObslugaGry
+    class Gra : IUstawieniaGry, IObslugaGry, IGraInformacje
     {
         private Gracz gracz;
         private Komputer komputer;

@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="Gra.cs" />
     <Compile Include="Gracz.cs" />
+    <Compile Include="IGraInformacje.cs" />
     <Compile Include="IObslugaGry.cs" />
     <Compile Include="IUstawieniaGry.cs" />
     <Compile Include="IUstawieniaPlanszy.cs" />

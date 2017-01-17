@@ -11,15 +11,5 @@ namespace Projekt_Poprawa
         void DodajGracza(string nazwa, string znak);
         void DodajKomputer();
         
-        bool CzyWygrana();
-        bool CzyRemis();
-        bool ReturnMoznaGrac();
-        
-        string ReturnZnakGracz();
-        string ReturnZnakKomputer();
-        string GraczInfo();
-        string KomputerInfo();
-        int ReturnRemis();
-        
     }
 }
