@@ -12,5 +12,7 @@ namespace Projekt_Poprawa
         void WstawZnak(int indeks, int znak);
         int[] ReturnTablica();
         int ReturnRemis();
+        void ZerujPlansze();
+        void ZerujRemisy();
     }
 }

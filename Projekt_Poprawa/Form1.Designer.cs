@@ -46,6 +46,8 @@
             this.BDodaj = new System.Windows.Forms.Button();
             this.LGraczWynik = new System.Windows.Forms.Label();
             this.BWyjscie = new System.Windows.Forms.Button();
+            this.BNowaGra = new System.Windows.Forms.Button();
+            this.BResetStat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // P0
@@ -214,11 +216,35 @@
             this.BWyjscie.UseVisualStyleBackColor = true;
             this.BWyjscie.Click += new System.EventHandler(this.BWyjscie_Click);
             // 
+            // BNowaGra
+            // 
+            this.BNowaGra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BNowaGra.Location = new System.Drawing.Point(22, 406);
+            this.BNowaGra.Name = "BNowaGra";
+            this.BNowaGra.Size = new System.Drawing.Size(100, 35);
+            this.BNowaGra.TabIndex = 18;
+            this.BNowaGra.Text = "Nowa Gra";
+            this.BNowaGra.UseVisualStyleBackColor = true;
+            this.BNowaGra.Click += new System.EventHandler(this.BNowaGra_Click);
+            // 
+            // BResetStat
+            // 
+            this.BResetStat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BResetStat.Location = new System.Drawing.Point(138, 405);
+            this.BResetStat.Name = "BResetStat";
+            this.BResetStat.Size = new System.Drawing.Size(91, 35);
+            this.BResetStat.TabIndex = 19;
+            this.BResetStat.Text = "Reset Stat";
+            this.BResetStat.UseVisualStyleBackColor = true;
+            this.BResetStat.Click += new System.EventHandler(this.BResetStat_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 471);
+            this.Controls.Add(this.BResetStat);
+            this.Controls.Add(this.BNowaGra);
             this.Controls.Add(this.BWyjscie);
             this.Controls.Add(this.LGraczWynik);
             this.Controls.Add(this.BDodaj);
@@ -264,6 +290,8 @@
         private System.Windows.Forms.Button BDodaj;
         private System.Windows.Forms.Label LGraczWynik;
         private System.Windows.Forms.Button BWyjscie;
+        private System.Windows.Forms.Button BNowaGra;
+        private System.Windows.Forms.Button BResetStat;
     }
 }
 

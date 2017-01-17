@@ -74,5 +74,16 @@ namespace Projekt_Poprawa
         {
             return ileRemisow;
         }
+
+        public void ZerujPlansze()
+        {
+            for (int i = 0; i < 9; i++)
+                this.tablica[i] = i + 3;
+            this.ilelRuchow = 0;
+        }
+        public void ZerujRemisy()
+        {
+            this.ileRemisow = 0;
+        }
     }
 }

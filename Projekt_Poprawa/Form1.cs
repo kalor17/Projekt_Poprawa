@@ -42,6 +42,7 @@ namespace Projekt_Poprawa
                 gra.WykonajRuchGracza(liczba);
                 b.Enabled = false;
                 b.Text = gra.ReturnZnakGracz();
+                b.BackColor = Color.GreenYellow;
                 
 
                 if (gra.CzyWygrana())
@@ -65,6 +66,7 @@ namespace Projekt_Poprawa
                         int p = gra.WykonajRuchKomputera();
                         przyciski[p].Enabled = false;
                         przyciski[p].Text = gra.ReturnZnakKomputer();
+                        przyciski[p].BackColor = Color.LightBlue;
                     }
                     if (gra.CzyWygrana())
                     {
@@ -107,6 +109,8 @@ namespace Projekt_Poprawa
                 {
                     przyciski[i].Visible=true;
                 }
+                BNowaGra.Visible = true;
+                BResetStat.Visible = true;
             }
         }
 
@@ -121,6 +125,8 @@ namespace Projekt_Poprawa
             TNazwa.Hide();
             TZnak.Hide();
             BDodaj.Hide();
+            BNowaGra.Hide();
+            BResetStat.Hide();
         }
 
         private void BGracze_Click(object sender, EventArgs e)
@@ -184,6 +190,29 @@ namespace Projekt_Poprawa
         private void BWyjscie_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BNowaGra_Click(object sender, EventArgs e)
+        {
+            gra.NowaGra();
+            for (int i = 0; i < 9; i++)
+            {
+                przyciski[i].Enabled = true;
+                przyciski[i].BackColor = Color.White;
+                przyciski[i].Text = "";
+            }
+        }
+
+        private void BResetStat_Click(object sender, EventArgs e)
+        {
+            gra.ResetStatystyk();
+            for (int i = 0; i < 9; i++)
+            {
+                przyciski[i].Enabled = true;
+                przyciski[i].BackColor = Color.White;
+                przyciski[i].Text = "";
+            }
+            Wynik();
         }
     }
 }

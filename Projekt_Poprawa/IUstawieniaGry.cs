@@ -21,5 +21,9 @@ namespace Projekt_Poprawa
         string GraczInfo();
         string KomputerInfo();
         int ReturnRemis();
+        void ZwiekszZwyGracz();
+        void ZwiekszZwyKomputer();
+        void NowaGra();
+        void ResetStatystyk();
     }
 }

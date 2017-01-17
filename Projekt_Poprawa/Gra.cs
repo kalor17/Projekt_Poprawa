@@ -93,6 +93,19 @@ namespace Projekt_Poprawa
         {
             komputer.ZwiekszZwy();
         }
+        public void NowaGra()
+        {
+            plansza.ZerujPlansze();
+            ruch = 0;
+        }
+        public void ResetStatystyk()
+        {
+            plansza.ZerujPlansze();
+            ruch = 0;
+            gracz.ZerujZwy();
+            komputer.ZerujZwy();
+            plansza.ZerujRemisy();
+        }
         
     }
 }
