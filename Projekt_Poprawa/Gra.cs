@@ -16,7 +16,7 @@ namespace Projekt_Poprawa
         private bool mozna_grac = false;
         private bool graczVsGracz = false;
 
-
+        #region Metody dodawania graczy
         public void DodajGracza(string nazwa, string znak)
         {
             gracz = new Gracz(nazwa, znak);
@@ -36,7 +36,9 @@ namespace Projekt_Poprawa
             else
                 komputer.UstawZnak("O");
         }
+        #endregion
 
+        #region Metody wykonywania ruchow
         public void WykonajRuchGracza(int indeks)
         {
             plansza.WstawZnak(indeks, ruch);
@@ -58,6 +60,9 @@ namespace Projekt_Poprawa
 
             return pole;
         }
+        #endregion
+
+        #region Pozostałe metody do obsługi gry
 
         public bool CzyWygrana()
         {
@@ -145,6 +150,6 @@ namespace Projekt_Poprawa
         {
             return this.ruch;
         }
-
+        #endregion
     }
 }

@@ -19,5 +19,6 @@ namespace Projekt_Poprawa
         string Gracz2Info();
         string KomputerInfo();
         int ReturnRemis();
+        int ReturnRuch();
     }
 }

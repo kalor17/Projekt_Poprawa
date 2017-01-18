@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Projekt_Poprawa
 {
+    /* UWAGA! Dodane są 2 tablice przycisków. Jedna do Gracz vs Komputer druga do Gracz vs Gracz.
+     * Jest tak zrobione poniewaz, na jednej tablicy przyciskow musiało być dużo warunków i za każdym
+     * razem coś działało niepoprawnie. */
     public partial class Form1 : Form
     {
         Gra gra = new Gra();
@@ -41,6 +44,7 @@ namespace Projekt_Poprawa
 
         }
 
+        #region Tablica przyciskow Gracz vs Komputer
         private void PClick(object sender, EventArgs e)
         {
             Button b = (Button)sender;
@@ -99,7 +103,9 @@ namespace Projekt_Poprawa
             }
 
         }
+        #endregion
 
+        #region Tablica przyciskow Gracz vs Gracz
         private void R_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
@@ -145,6 +151,9 @@ namespace Projekt_Poprawa
                     Wynik();
                 }
         }
+        #endregion
+
+        #region Przyciski Start Dodaj (z obsługą błędów)
 
         private void BStart_Click(object sender, EventArgs e)
         {
@@ -256,6 +265,8 @@ namespace Projekt_Poprawa
             }
 
         }
+        #endregion
+
         #region Ustawienia Przyciskow + Wynik
         private void UkryjElementy()
         {
@@ -394,7 +405,7 @@ namespace Projekt_Poprawa
             BGraczVsGracz.Visible = true;
             BGraczVsKomputer.Visible = true;
         }
-        #endregion
+        
 
         private void BGraczVsKomputer_Click(object sender, EventArgs e)
         {
@@ -415,7 +426,7 @@ namespace Projekt_Poprawa
             BGraczVsKomputer.Hide();
             BGraczVsGracz.Hide();
         }
+        #endregion
 
-        
     }
 }

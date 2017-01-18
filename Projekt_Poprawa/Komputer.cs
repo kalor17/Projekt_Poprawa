@@ -44,6 +44,7 @@ namespace Projekt_Poprawa
 
         }
 
+        #region Algorytm na ruch komputera
         private int WygrajZablokuj(int[] tablica, int znak)
         {
             // Szukanie poziomo
@@ -133,5 +134,6 @@ namespace Projekt_Poprawa
 
             return -1;
         }
+        #endregion
     }
 }
