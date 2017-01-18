@@ -401,7 +401,7 @@ namespace Projekt_Poprawa
                     przyciski2[i].Text = "";
                 }
             }
-            BGracze.Visible = true;
+            BGracze.Hide();
             BGraczVsGracz.Visible = true;
             BGraczVsKomputer.Visible = true;
         }
