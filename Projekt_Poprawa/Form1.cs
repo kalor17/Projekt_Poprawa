@@ -166,7 +166,7 @@ namespace Projekt_Poprawa
             catch
             {
                 ok = false;
-                MessageBox.Show("Przed rozpoczęciem gry dodaj gracza");
+                MessageBox.Show("Przed rozpoczęciem gry dodaj graczy!");
             }
 
             if (ok)
