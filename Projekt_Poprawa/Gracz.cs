@@ -9,6 +9,11 @@ namespace Projekt_Poprawa
     class Gracz : Player
     {
         public Gracz() { }
+        public Gracz(string nazwa)
+        {
+            this.nazwa = nazwa;
+            this.lZwyc = 0;
+        }
 
         public Gracz(string nazwa, string znak)
         {

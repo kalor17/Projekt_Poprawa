@@ -11,9 +11,12 @@ namespace Projekt_Poprawa
         bool CzyWygrana();
         bool CzyRemis();
         bool ReturnMoznaGrac();
+        bool ReturnGraczVsGracz();
         string ReturnZnakGracz();
+        string ReturnZnakGracz2();
         string ReturnZnakKomputer();
         string GraczInfo();
+        string Gracz2Info();
         string KomputerInfo();
         int ReturnRemis();
     }

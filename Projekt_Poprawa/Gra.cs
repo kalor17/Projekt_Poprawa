@@ -9,15 +9,24 @@ namespace Projekt_Poprawa
     class Gra : IUstawieniaGry, IObslugaGry, IGraInformacje
     {
         private Gracz gracz;
+        private Gracz gracz2;
         private Komputer komputer;
         private Plansza plansza = new Plansza();
         private int ruch = 0; // 0 lub 1
         private bool mozna_grac = false;
+        private bool graczVsGracz = false;
 
 
         public void DodajGracza(string nazwa, string znak)
         {
             gracz = new Gracz(nazwa, znak);
+        }
+        public void DodajGracza2(string nazwa)
+        {
+            gracz2 = new Gracz(nazwa);
+            if (gracz.ReturnZnak() == "O") gracz2.UstawZnak("X");
+            else
+                gracz2.UstawZnak("O");
         }
 
         public void DodajKomputer()
@@ -32,6 +41,11 @@ namespace Projekt_Poprawa
         {
             plansza.WstawZnak(indeks, ruch);
             ruch = 1;
+        }
+        public void WykonajRuchGracza2(int indeks)
+        {
+            plansza.WstawZnak(indeks, ruch);
+            ruch = 0;
         }
 
         public int WykonajRuchKomputera()
@@ -62,9 +76,21 @@ namespace Projekt_Poprawa
         {
             this.mozna_grac = ustaw;
         }
+        public bool ReturnGraczVsGracz()
+        {
+            return graczVsGracz;
+        }
+        public void UstawGraczVsGracz(bool ustaw)
+        {
+            this.graczVsGracz = ustaw;
+        }
         public string ReturnZnakGracz()
         {
             return gracz.ReturnZnak();
+        }
+        public string ReturnZnakGracz2()
+        {
+            return gracz2.ReturnZnak();
         }
 
         public string ReturnZnakKomputer()
@@ -75,6 +101,10 @@ namespace Projekt_Poprawa
         public string GraczInfo()
         {
             return gracz.Info();
+        }
+        public string Gracz2Info()
+        {
+            return gracz2.Info();
         }
 
         public string KomputerInfo()
@@ -88,6 +118,10 @@ namespace Projekt_Poprawa
         public void ZwiekszZwyGracz()
         {
             gracz.ZwiekszZwy();
+        }
+        public void ZwiekszZwyGracz2()
+        {
+            gracz2.ZwiekszZwy();
         }
         public void ZwiekszZwyKomputer()
         {
@@ -103,8 +137,13 @@ namespace Projekt_Poprawa
             plansza.ZerujPlansze();
             ruch = 0;
             gracz.ZerujZwy();
+            gracz2.ZerujZwy();
             komputer.ZerujZwy();
             plansza.ZerujRemisy();
+        }
+        public int ReturnRuch()
+        {
+            return this.ruch;
         }
 
     }

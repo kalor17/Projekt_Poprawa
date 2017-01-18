@@ -10,6 +10,9 @@ namespace Projekt_Poprawa
     {
         void DodajGracza(string nazwa, string znak);
         void DodajKomputer();
+        void DodajGracza2(string nazwa);
+        void UstawGraczVsGracz(bool ustaw);
+        void UstawMoznaGrac(bool ustaw);
 
     }
 }
